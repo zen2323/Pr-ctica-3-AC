@@ -1,13 +1,12 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\RestaurantesController;
 use App\Http\Controllers\DetallesRestauranteController;
 use App\Http\Controllers\MenusController;
 use App\Http\Controllers\PlatosController;
 use App\Http\Controllers\ReservasController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,20 +24,9 @@ Route::get('/status', function () {
     return response()->json(['status' => 'API is working']);
 });
 
-// Clientes
-Route::apiResource('clientes', ClientesController::class);
-
-// Restaurantes
-Route::apiResource('restaurantes', RestaurantesController::class);
-
-// Detalles de Restaurante
-Route::apiResource('detalles-restaurante', DetallesRestauranteController::class);
-
-// Menús
-Route::apiResource('menus', MenusController::class);
-
-// Platos
-Route::apiResource('platos', PlatosController::class);
-
-// Reservas
-Route::apiResource('reservas', ReservasController::class);
+Route::apiResource('cliente', ClienteController::class);
+Route::apiResource('restaurante', RestaurantesController::class);
+Route::apiResource('detalle-restaurante', DetallesRestauranteController::class);
+Route::apiResource('menu', MenusController::class);
+Route::apiResource('plato', PlatosController::class);
+Route::apiResource('reserva', ReservasController::class);

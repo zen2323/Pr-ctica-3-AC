@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('table', function (Blueprint $table) {
+        Schema::create('menu_plato', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('menu_id');
             $table->unsignedBigInteger('plato_id');

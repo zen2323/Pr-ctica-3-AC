@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('referido_por')->nullable();
             $table->string('nombre');
             $table->string('correo')->unique();
             $table->string('telefono');
             $table->timestamps();
 
-            $table->foreign('referido_por')->references('id')->on('clientes')->onDelete('set null');
+            // Solo esta definición es necesaria
+            $table->foreignId('referido_por')->nullable()->constrained('clientes')->onDelete('set null');
         });
     }
 

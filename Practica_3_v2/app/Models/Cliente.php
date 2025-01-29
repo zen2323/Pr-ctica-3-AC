@@ -9,7 +9,7 @@ class Cliente extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['referido_por', 'nombre', 'correo', 'telefono'];
+    protected $fillable = ['nombre', 'correo', 'telefono', 'referido_por'];
 
     public function referidoPor()
     {

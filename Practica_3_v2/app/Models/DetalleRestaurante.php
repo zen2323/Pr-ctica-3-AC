@@ -9,6 +9,8 @@ class DetalleRestaurante extends Model
 {
     use HasFactory;
 
+    protected $table = 'detalle_restaurantes';
+
     protected $fillable = ['restaurante_id', 'direccion', 'horario', 'telefono'];
 
     public function restaurante()

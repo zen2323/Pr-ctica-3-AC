@@ -15,7 +15,7 @@ class MenusController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'restaurante_id' => 'required|exists:restaurantes,id',
+            'restaurante_id' => 'required|exists:restaurante,id',
             'nombre' => 'required|string|max:255',
         ]);
 
@@ -24,7 +24,7 @@ class MenusController extends Controller
 
     public function show($id)
     {
-        return Menu::with(['restaurante', 'platos'])->findOrFail($id);
+        return Menu::with('restaurante')->findOrFail($id);
     }
 
     public function update(Request $request, $id)
@@ -32,7 +32,7 @@ class MenusController extends Controller
         $menu = Menu::findOrFail($id);
 
         $validatedData = $request->validate([
-            'restaurante_id' => 'nullable|exists:restaurantes,id',
+            'restaurante_id' => 'nullable|exists:restaurante,id',
             'nombre' => 'nullable|string|max:255',
         ]);
 

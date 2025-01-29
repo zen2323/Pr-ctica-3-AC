@@ -13,6 +13,6 @@ class Plato extends Model
 
     public function menus()
     {
-        return $this->belongsToMany(Menu::class, 'table')->withPivot('menu_id', 'plato_id');
+        return $this->belongsToMany(Menu::class, 'menu_plato')->withPivot('menu_id', 'plato_id');
     }
 }

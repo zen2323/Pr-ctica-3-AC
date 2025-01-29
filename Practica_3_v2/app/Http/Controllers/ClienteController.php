@@ -15,9 +15,9 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'referido_por' => 'nullable|exists:clientes,id',
+            'referido_por' => 'nullable|exists:cliente,id',
             'nombre' => 'required|string|max:255',
-            'correo' => 'required|email|unique:clientes',
+            'correo' => 'required|email|unique:cliente',
             'telefono' => 'required|string|max:15',
         ]);
 
@@ -34,9 +34,9 @@ class ClienteController extends Controller
         $cliente = Cliente::findOrFail($id);
 
         $validatedData = $request->validate([
-            'referido_por' => 'nullable|exists:clientes,id',
+            'referido_por' => 'nullable|exists:cliente,id',
             'nombre' => 'nullable|string|max:255',
-            'correo' => 'nullable|email|unique:clientes,correo,' . $id,
+            'correo' => 'nullable|email|unique:cliente,correo,' . $id,
             'telefono' => 'nullable|string|max:15',
         ]);
 

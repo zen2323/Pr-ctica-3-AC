@@ -2,27 +2,26 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\DetalleRestaurante;
+
 
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Ejecutar los Seeders.
      */
-    public function run(): void
+    public function run()
     {
-        // User::factory(10)->create();
-
         $this->call([
             ClienteSeeder::class,
-            RestaurantesSeeder::class,
-            PlatosSeeder::class,
-            MenusSeeder::class,
-            DetalleRestaurantesSeeder::class,
-            TableSeeder::class,
-            ReservasSeeder::class,
+            RestauranteSeeder::class,
+            DetalleRestauranteSeeder::class, // 📌 Verifica que el nombre coincida
+            MenuSeeder::class,
+            PlatoSeeder::class,
+            MenuPlatoSeeder::class,
+            ReservaSeeder::class,
         ]);
+        
     }
 }

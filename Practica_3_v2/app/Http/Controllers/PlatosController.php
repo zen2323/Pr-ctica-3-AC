@@ -17,6 +17,7 @@ class PlatosController extends Controller
         $validatedData = $request->validate([
             'nombre' => 'required|string|max:255',
             'precio' => 'required|numeric|min:0',
+            'menu_id' => 'required|exists:menu,id'
         ]);
 
         return Plato::create($validatedData);
@@ -34,6 +35,7 @@ class PlatosController extends Controller
         $validatedData = $request->validate([
             'nombre' => 'nullable|string|max:255',
             'precio' => 'nullable|numeric|min:0',
+            'menu_id' => 'nullable|exists:menu,id'
         ]);
 
         $plato->update($validatedData);

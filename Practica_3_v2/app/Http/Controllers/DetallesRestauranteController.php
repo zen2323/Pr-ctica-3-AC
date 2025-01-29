@@ -9,13 +9,13 @@ class DetallesRestauranteController extends Controller
 {
     public function index()
     {
-        return DetalleRestaurante::with('restaurante')->get();
+        return DetalleRestaurante::all();
     }
 
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'restaurante_id' => 'required|exists:restaurantes,id',
+            'restaurante_id' => 'required|exists:restaurante,id',
             'direccion' => 'required|string|max:255',
             'horario' => 'required|string|max:255',
             'telefono' => 'required|string|max:15',
@@ -26,7 +26,7 @@ class DetallesRestauranteController extends Controller
 
     public function show($id)
     {
-        return DetalleRestaurante::with('restaurante')->findOrFail($id);
+        return DetalleRestaurante::findOrFail($id);
     }
 
     public function update(Request $request, $id)
@@ -34,7 +34,7 @@ class DetallesRestauranteController extends Controller
         $detalle = DetalleRestaurante::findOrFail($id);
 
         $validatedData = $request->validate([
-            'restaurante_id' => 'nullable|exists:restaurantes,id',
+            'restaurante_id' => 'nullable|exists:restaurante,id',
             'direccion' => 'nullable|string|max:255',
             'horario' => 'nullable|string|max:255',
             'telefono' => 'nullable|string|max:15',
