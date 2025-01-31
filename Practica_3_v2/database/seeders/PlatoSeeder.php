@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Plato;
 
 class PlatoSeeder extends Seeder
 {
@@ -12,6 +12,25 @@ class PlatoSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Plato::create([
+            'nombre' => 'Pizza Margherita',
+            'descripcion' => 'Pizza clásica con tomate, mozzarella y albahaca.',
+            'precio' => 8.00,
+            'menu_id' => 1,
+        ]);
+
+        Plato::create([
+            'nombre' => 'Sushi Rolls',
+            'descripcion' => 'Rollos de sushi con pescado fresco y arroz.',
+            'precio' => 12.00,
+            'menu_id' => 2,
+        ]);
+
+        Plato::create([
+            'nombre' => 'Paella Valenciana',
+            'descripcion' => 'Arroz con mariscos, carne y verduras.',
+            'precio' => 15.00,
+            'menu_id' => 3,
+        ]);
     }
 }
