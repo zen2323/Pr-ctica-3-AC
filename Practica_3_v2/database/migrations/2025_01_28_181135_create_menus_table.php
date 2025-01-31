@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('restaurante_id');
             $table->string('nombre');
+            $table->string('descripcion');
+            $table->float('precio');
             $table->timestamps();
         });
     }

@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('menu_id');
             $table->unsignedBigInteger('plato_id');
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->decimal('precio', 8, 2);
             $table->timestamps();
 
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
-            $table->foreign('plato_id')->references('id')->on('platos')->onDelete('cascade');
         });
     }
 
