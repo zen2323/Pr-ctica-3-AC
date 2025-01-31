@@ -15,7 +15,6 @@ El sistema también debe soportar la gestión de relaciones entre entidades como
 
 A continuación se muestra el modelo E-R de la aplicación:
 
-![Modelo E-R](image.png)
 ![Captura de pantalla 2025-01-31 194434](https://github.com/user-attachments/assets/9acbb882-b17e-4b76-8611-90a03a5124a2)
 
 ### Criterios del modelo:
